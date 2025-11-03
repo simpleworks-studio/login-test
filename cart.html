@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+  </style>
+</head>
+<body>
+
+<h1>Your Cart</h1>
+<div id="cartItems"></div>
+<h2 id="total"></h2>
+<button onclick="checkout()">Checkout</button>
+
+<script>
+fetch("products.json")
+  .then(res => res.json())
+  .then(products => {
+    let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    let total = 0;
+    cart.forEach(id => {
+      let p = products[id];
+      total += p.price;
+      document.getElementById("cartItems").innerHTML += `<p>${p.name} - ₹${p.price}</p>`;
+    });
+    document.getElementById("total").innerText = "Total: ₹" + total;
+  });
+
+function checkout(){
+  alert("Demo Checkout — Replace this with payment later");
+}
+</script>
+
+</body>
+</html>
