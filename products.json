@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Black Hoodie",
+    "price": 899,
+    "description": "Premium cotton comfort fit",
+    "image": "images/hoodie.jpg"
+  },
+  {
+    "name": "Men's Leather Wallet",
+    "price": 499,
+    "description": "Genuine leather wallet",
+    "image": "images/wallet.jpg"
+  }
+]
